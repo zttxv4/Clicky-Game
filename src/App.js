@@ -3,7 +3,7 @@ import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import players from "./cards.json";
-// import "./App.css";
+import "./App.css";
 
 
 class App extends Component {
@@ -41,9 +41,9 @@ class App extends Component {
         return (
             <div className="App">
         <header className="App-header">
-          <h1 className="App-title">The Clickster</h1>
+          <h1 className="App-title">Clicky Game</h1>
           <p className="App-intro">
-            Try not to click the same image twice!
+            Don't click the same player twice!
           </p>
         </header>
         <Title total={this.state.score}
@@ -51,12 +51,12 @@ class App extends Component {
                status={this.state.status}
                />
         <Wrapper>
-          {this.state.pups.map(puppy => (
+          {this.state.players.map(player => (
             <Card
               shuffleScoreCard={this.shuffleScoreCard}
-              id={puppy.id}
-              key={puppy.id}
-              image={puppy.image}
+              id={player.id}
+              key={player.id}
+              image={player.image}
             />
           ))}
         </Wrapper>
@@ -64,3 +64,5 @@ class App extends Component {
         )
     }
 }
+
+export default App;
